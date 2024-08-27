@@ -28,12 +28,13 @@ path <- setwd("C:/Users/MSingh/coursera/assignment")
 cities <- data.frame(name = c("Guinea", "Mali", "cote divoire"),
                      lat = c(9.639091, 12.940559, 5.420236),
                      lon = c(-13.451930,-7.924775,-5.574145),
-                     pop = c(13.86, 22.59, 28.16))
+                     pop = c(13.86, 22.59, 28.16),
+                     c_color=c("blue","green","red"))
 
 cities%>%
   leaflet()%>%
   addTiles()%>%
-  addMarkers() %>%
+  addCircles(weight = 40, radius = sqrt(cities$pop), color = cities$c_color) %>%
   addLegend(labels = c("conakery", "bamako", "Fresco"), colors = c("blue","green","red"))
   
 

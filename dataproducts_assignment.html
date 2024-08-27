@@ -4418,16 +4418,17 @@ on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http:
 cities &lt;- data.frame(name = c(&quot;Guinea&quot;, &quot;Mali&quot;, &quot;cote divoire&quot;),
                      lat = c(9.639091, 12.940559, 5.420236),
                      lon = c(-13.451930,-7.924775,-5.574145),
-                     pop = c(13.86, 22.59, 28.16))
+                     pop = c(13.86, 22.59, 28.16),
+                     c_color=c(&quot;blue&quot;,&quot;green&quot;,&quot;red&quot;))
 
 cities%&gt;%
   leaflet()%&gt;%
   addTiles()%&gt;%
-  addMarkers() %&gt;%
+  addCircles(weight = 40, radius = sqrt(cities$pop), color = cities$c_color) %&gt;%
   addLegend(labels = c(&quot;conakery&quot;, &quot;bamako&quot;, &quot;Fresco&quot;), colors = c(&quot;blue&quot;,&quot;green&quot;,&quot;red&quot;))</code></pre>
 <pre><code>## Assuming &quot;lon&quot; and &quot;lat&quot; are longitude and latitude, respectively</code></pre>
-<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-56f0f41827d0487ec65f" style="width:672px;height:480px;"></div>
-<script type="application/json" data-for="htmlwidget-56f0f41827d0487ec65f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addMarkers","args":[[9.639091000000001,12.940559,5.420236],[-13.45193,-7.924775,-5.574145],null,null,null,{"interactive":true,"draggable":false,"keyboard":true,"title":"","alt":"","zIndexOffset":0,"opacity":1,"riseOnHover":false,"riseOffset":250},null,null,null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["blue","green","red"],"labels":["conakery","bamako","Fresco"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"topright","type":"unknown","title":null,"extra":null,"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[5.420236,12.940559],"lng":[-13.45193,-5.574145]}},"evals":[],"jsHooks":[]}</script>
+<div class="leaflet html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-66c6970e3469f061bae7" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-66c6970e3469f061bae7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"https://openstreetmap.org/copyright/\">OpenStreetMap<\/a>,  <a href=\"https://opendatacommons.org/licenses/odbl/\">ODbL<\/a>"}]},{"method":"addCircles","args":[[9.639091000000001,12.940559,5.420236],[-13.45193,-7.924775,-5.574145],[3.722902093797257,4.752893855326458,5.30659966456864],null,null,{"interactive":true,"className":"","stroke":true,"color":["blue","green","red"],"weight":40,"opacity":0.5,"fill":true,"fillColor":["blue","green","red"],"fillOpacity":0.2},null,null,null,{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null,null]},{"method":"addLegend","args":[{"colors":["blue","green","red"],"labels":["conakery","bamako","Fresco"],"na_color":null,"na_label":"NA","opacity":0.5,"position":"topright","type":"unknown","title":null,"extra":null,"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[5.420236,12.940559],"lng":[-13.45193,-5.574145]}},"evals":[],"jsHooks":[]}</script>
 </div>
 
 
