@@ -18,9 +18,9 @@ This is an R Markdown document. Markdown is a simple formatting syntax for autho
 library(leaflet)
 ```
 
-Return Today's date
+Return a date 2 months before today's date
 ```{r}
-Sys.Date()
+Sys.Date()-60
 ```
 
 ```{r}
