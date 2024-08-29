@@ -1,0 +1,18 @@
+---
+title: "Peer-graded Assignment: R Markdown Presentation & Plotly"
+author: "Manjari singh"
+date: "2024-08-29"
+output: ioslides_presentation
+---
+
+## Plot of wt vs mpg in mtcars dataset
+ 
+```{r, echo = FALSE, comment= FALSE}
+print(Sys.Date()-60)
+```
+
+
+```{r, echo = FALSE, message = FALSE, warning=FALSE}
+library(plotly)
+plot_ly(mtcars, x = mtcars$wt, y = mtcars$mpg, mode = "markers", color = as.factor(mtcars$cyl))
+```
